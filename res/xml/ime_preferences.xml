@@ -148,6 +148,21 @@
              android:title="@string/pref_keyboard_feedback_title"
              android:summary="@string/pref_keyboard_feedback_summary"
              android:defaultValue="2" />
+         <ListPreference
+             android:key="@string/pref_keyboard_sound_theme_key"
+             android:title="@string/pref_keyboard_sound_theme_title"
+             android:summary="@string/pref_keyboard_sound_theme_summary"
+             android:entries="@array/keyboard_sound_theme_entries"
+             android:entryValues="@array/keyboard_sound_theme_values"
+             android:defaultValue="system" />
+         <Preference
+             android:key="@string/pref_custom_sound_theme_folder_key"
+             android:title="@string/pref_custom_sound_theme_folder_title"
+             android:summary="@string/pref_custom_sound_theme_folder_summary" />
+         <com.dalton.braillekeyboard.SeekBarPreference
+             android:key="@string/pref_keyboard_sound_volume_key"
+             android:title="@string/pref_keyboard_sound_volume_title"
+             android:defaultValue="100" />
          <CheckBoxPreference
          android:key="@string/pref_echo_passwords_key"
          android:title="@string/speak_passwords"
@@ -176,6 +191,7 @@
          android:defaultValue="@string/pref_use_accessibility_volume_default" />
          </PreferenceScreen>
          <PreferenceScreen
+             android:key="pref_text_to_speech_title_key"
              android:title="@string/pref_text_to_speech_title" >
          <ListPreference
              android:key="@string/pref_text_to_speech_engine_key"
