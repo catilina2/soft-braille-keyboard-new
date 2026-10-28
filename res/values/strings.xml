@@ -680,6 +680,10 @@
     <string name="pref_vibrate_on_exit_default">true</string>
     <string name="pref_vibrate_on_exit_key">VIBRATE_EXIT</string>
     <string name="pref_vibrate_on_exit_title">Vibrate when keyboard closes</string>
+    <string name="pref_keep_screen_on_default">true</string>
+    <string name="pref_keep_screen_on_key">KEEP_SCREEN_ON</string>
+    <string name="pref_keep_screen_on_summary">Keeps the screen from turning off while the keyboard is open in a text field, so you can read long texts. It is released when the keyboard closes or when you send (Enter in a field that sends), and comes back when you type again.</string>
+    <string name="pref_keep_screen_on_title">Keep the screen on while typing</string>
     <string name="pref_voice_shortcut_default">true</string>
     <string name="pref_voice_shortcut_key">VOICE_INPUT_SHORTCUT</string>
     <string name="pref_voice_shortcut_summary">When enabled double tap and hold to start voice dictation while talkback is enabled.</string> 

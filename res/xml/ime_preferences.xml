@@ -85,6 +85,11 @@
              android:title="@string/pref_invert_vertical_swipes_title"
              android:summary="@string/pref_invert_vertical_swipes_summary"
              android:defaultValue="@string/pref_invert_vertical_swipes_default" />
+         <CheckBoxPreference
+             android:key="@string/pref_keep_screen_on_key"
+             android:title="@string/pref_keep_screen_on_title"
+             android:summary="@string/pref_keep_screen_on_summary"
+             android:defaultValue="@string/pref_keep_screen_on_default" />
          <Preference
              android:key="pref_gestures_customization_key"
              android:title="@string/pref_gestures_title"

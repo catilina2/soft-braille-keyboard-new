@@ -625,6 +625,10 @@
     <string name="pref_vibrate_on_exit_default">true</string>
     <string name="pref_vibrate_on_exit_key">VIBRATE_EXIT</string>
     <string name="pref_vibrate_on_exit_title">Vibrar ao fechar o teclado</string>
+    <string name="pref_keep_screen_on_default">true</string>
+    <string name="pref_keep_screen_on_key">KEEP_SCREEN_ON</string>
+    <string name="pref_keep_screen_on_summary">Impede que a tela apague enquanto o teclado está aberto num campo de texto, para você poder ler textos longos. Volta ao normal quando o teclado fecha ou quando você envia (Enter em um campo que envia), e liga de novo quando você digita.</string>
+    <string name="pref_keep_screen_on_title">Manter a tela ligada ao digitar</string>
     <string name="pref_voice_shortcut_default">true</string>
     <string name="pref_voice_shortcut_key">VOICE_INPUT_SHORTCUT</string>
     <string name="pref_voice_shortcut_summary">Quando ativado, dê dois toques e segure para iniciar o ditado por voz (quando o talkback estiver ativado).</string>

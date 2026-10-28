@@ -92,10 +92,46 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         }
     }
 
+    private int mImeOptions = 0;
+    private boolean mKeepAwakeSuspended = false;
+
+    /** Keeps the screen on while the keyboard is open in a text field (option "Keep the screen on while typing"). */
+    private void updateKeepAwake() {
+        boolean enabled = Options.getBooleanPreference(this, R.string.pref_keep_screen_on_key,
+                Boolean.parseBoolean(getString(R.string.pref_keep_screen_on_default)));
+        setKeepAwake(enabled && !mKeepAwakeSuspended);
+    }
+
+    private void setKeepAwake(boolean on) {
+        if (brailleView != null) brailleView.setKeepScreenOn(on);
+    }
+
+    /** Enter performs the editor action (send, go, search, done) unless the field asked for a plain new line. */
+    private boolean enterSendsAction() {
+        if ((mImeOptions & EditorInfo.IME_FLAG_NO_ENTER_ACTION) != 0) return false;
+        int action = mImeOptions & EditorInfo.IME_MASK_ACTION;
+        return action == EditorInfo.IME_ACTION_SEND || action == EditorInfo.IME_ACTION_GO
+                || action == EditorInfo.IME_ACTION_SEARCH || action == EditorInfo.IME_ACTION_DONE;
+    }
+
+    /** After sending, let the screen turn off again until the next text is typed. */
+    private void suspendKeepAwake() {
+        mKeepAwakeSuspended = true;
+        setKeepAwake(false);
+    }
+
+    private void resumeKeepAwake() {
+        if (mKeepAwakeSuspended) {
+            mKeepAwakeSuspended = false;
+            updateKeepAwake();
+        }
+    }
+
     @Override
     public void onWindowShown() {
         super.onWindowShown();
         mIsFinishing = false;
+        updateKeepAwake();
         if (brailleView != null) {
             brailleView.setVisibility(View.VISIBLE);
             brailleView.onStartInput(getLocale());
@@ -153,6 +189,9 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     public void onStartInputView(EditorInfo info, boolean restarting) {
         super.onStartInputView(info, restarting);
         mIsFinishing = false;
+        mImeOptions = info != null ? info.imeOptions : 0;
+        if (!restarting) mKeepAwakeSuspended = false;     // apps often restart the input after a send: stay released
+        updateKeepAwake();
         if (!restarting && brailleView != null) {
             brailleView.onInitialiseForInput(this, this);
         } else if (restarting && brailleView != null) {
@@ -162,18 +201,20 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         scheduleAccessibilityUpdate(3, 400);
     }
 
-    @Override public void onFinishInputView(boolean finishingInput) { super.onFinishInputView(finishingInput); if (brailleView != null) brailleView.close(); }
+    @Override public void onFinishInputView(boolean finishingInput) { super.onFinishInputView(finishingInput); setKeepAwake(false); if (brailleView != null) brailleView.close(); }
 
     @Override
     public void onFinishInput() {
         super.onFinishInput();
         mIsFinishing = true;
+        setKeepAwake(false);
         finishComposingText(false);
     }
 
     @Override
     public void onWindowHidden() {
         super.onWindowHidden();
+        setKeepAwake(false);
         if (brailleView != null) {
             brailleView.setVisibility(View.GONE);
             brailleView.sendAccessibilityEvent(android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
@@ -187,6 +228,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        setKeepAwake(false);
         mIsFinishing = true; mAccessibilityHandler.removeCallbacksAndMessages(null);
         if (brailleParser != null) { brailleParser.destroy(); brailleParser = null; }
         clearAccessibilityState();
@@ -300,6 +342,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     }
 
     private String compose(CharSequence text, String snapshot) {
+        resumeKeepAwake();
         if (composingText.length() == 0) updateShiftState();
         InputConnection ic = getCurrentInputConnection(); if (ic == null) return text.toString();
         if (selectAll) { toggleMark(); selectAll = false; }
@@ -336,9 +379,10 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         InputConnection ic = getCurrentInputConnection(); if (ic == null) return;
         if (selectAll) { toggleMark(); selectAll = false; }
         finishComposingText();
+        resumeKeepAwake();
         switch (keyCode) {
         case KeyEvent.KEYCODE_DEL: keyDownUp(ic, KeyEvent.KEYCODE_DEL); break;
-        case KeyEvent.KEYCODE_ENTER: case '\n': keyDownUp(ic, KeyEvent.KEYCODE_ENTER); break;
+        case KeyEvent.KEYCODE_ENTER: case '\n': keyDownUp(ic, KeyEvent.KEYCODE_ENTER); if (enterSendsAction()) suspendKeepAwake(); break;
         default:
             if (keyCode >= '0' && keyCode <= '9') keyDownUp(ic, keyCode - '0' + KeyEvent.KEYCODE_0);
             else ic.commitText(String.valueOf((char) keyCode), 1);
@@ -397,6 +441,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     @Override
     public void commitText(String text, int newCursorPosition) {
         InputConnection ic = getCurrentInputConnection(); if (ic == null) return;
+        resumeKeepAwake();
         if (selectAll) { toggleMark(); selectAll = false; }
         checkAndExpandAbbreviation(KeyboardListener.EXPANSION_TYPE_SPACE);
         finishComposingText();
@@ -404,7 +449,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         ic.commitText(text, newCursorPosition);
     }
 
-    @Override public void closeKeyboard() { if (brailleView != null) { brailleView.setVisibility(View.GONE); brailleView.sendAccessibilityEvent(android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED); } requestHideSelf(0); }
+    @Override public void closeKeyboard() { setKeepAwake(false); if (brailleView != null) { brailleView.setVisibility(View.GONE); brailleView.sendAccessibilityEvent(android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED); } requestHideSelf(0); }
     @Override public String translateOnly(byte dots) { if (brailleParser != null) { List<Byte> l = new ArrayList<Byte>(); l.add((byte) 0); l.add(dots); return brailleParser.backTranslate(this, l.toArray(new Byte[l.size()])); } return null; }
     @Override public String translateLiteral(byte dots) { if (brailleParser != null) { List<Byte> l = new ArrayList<Byte>(); l.add(dots); return brailleParser.backTranslateLiteral(this, l.toArray(new Byte[l.size()])); } return null; }
 
