@@ -485,7 +485,6 @@
     <string name="pref_braille_type_default">1</string>
     <string name="pref_braille_type_key">BRAILLE_GRADE_KEY</string>
     <string name="pref_category_advanced_key">ADVANCED_LOGS</string>
-    <string name="pref_category_advanced_title">Zaawansowane i dzienniki</string>
     <string name="pref_category_braille_key">BRAILLE_CATEGORY_KEY</string>
     <string name="pref_category_braille_title">Ustawienia tablicy brajlowskiej</string>
     <string name="pref_category_custom_tables_title">Niestandardowe tablice brajlowskie</string>
@@ -844,4 +843,14 @@
         <item>SET_DOT_7</item>
         <item>SET_DOT_8</item>
     </string-array>
+    <string name="pref_category_advanced_title">Zaawansowane, kopie zapasowe i dzienniki</string>
+    <string name="pref_backup_settings_title">Utwórz kopię zapasową wszystkich ustawień</string>
+    <string name="pref_backup_settings_summary">Zapisuje wszystkie ustawienia klawiatury do pliku</string>
+    <string name="pref_restore_settings_title">Przywróć wszystkie ustawienia</string>
+    <string name="pref_restore_settings_summary">Wczytuje wszystkie ustawienia z pliku kopii zapasowej</string>
+    <string name="pref_restore_settings_confirm">Spowoduje to zastąpienie wszystkich bieżących ustawień ustawieniami z pliku kopii zapasowej. Kontynuować?</string>
+    <string name="msg_backup_saved">Zapisano kopię zapasową ustawień</string>
+    <string name="msg_backup_failed">Nie udało się zapisać kopii zapasowej</string>
+    <string name="msg_restore_done">Przywrócono ustawienia</string>
+    <string name="msg_restore_failed">Nie udało się przywrócić: nieprawidłowy plik kopii zapasowej</string>
 </resources>

@@ -485,7 +485,6 @@
     <string name="pref_braille_type_default">1</string>
     <string name="pref_braille_type_key">BRAILLE_GRADE_KEY</string>
     <string name="pref_category_advanced_key">ADVANCED_LOGS</string>
-    <string name="pref_category_advanced_title">Napredno i dnevnici</string>
     <string name="pref_category_braille_key">BRAILLE_CATEGORY_KEY</string>
     <string name="pref_category_braille_title">Postavke brajične tablice</string>
     <string name="pref_category_custom_tables_title">Prilagođene Brailleove tablice</string>
@@ -843,4 +842,14 @@
         <item>SET_DOT_7</item>
         <item>SET_DOT_8</item>
     </string-array>
+    <string name="pref_category_advanced_title">Napredno, sigurnosne kopije i dnevnici</string>
+    <string name="pref_backup_settings_title">Sigurnosna kopija svih postavki</string>
+    <string name="pref_backup_settings_summary">Sprema sve postavke tipkovnice u datoteku</string>
+    <string name="pref_restore_settings_title">Vrati sve postavke</string>
+    <string name="pref_restore_settings_summary">Učitava sve postavke iz datoteke sigurnosne kopije</string>
+    <string name="pref_restore_settings_confirm">Ovo će zamijeniti sve trenutne postavke postavkama iz datoteke sigurnosne kopije. Nastaviti?</string>
+    <string name="msg_backup_saved">Sigurnosna kopija postavki spremljena</string>
+    <string name="msg_backup_failed">Sigurnosnu kopiju nije moguće spremiti</string>
+    <string name="msg_restore_done">Postavke vraćene</string>
+    <string name="msg_restore_failed">Vraćanje nije uspjelo: neispravna datoteka sigurnosne kopije</string>
 </resources>

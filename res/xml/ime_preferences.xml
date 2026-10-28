@@ -232,6 +232,14 @@
          android:key="@string/pref_category_advanced_key"
          android:title="@string/pref_category_advanced_title" >
          <Preference
+             android:key="pref_backup_settings_key"
+             android:title="@string/pref_backup_settings_title"
+             android:summary="@string/pref_backup_settings_summary" />
+         <Preference
+             android:key="pref_restore_settings_key"
+             android:title="@string/pref_restore_settings_title"
+             android:summary="@string/pref_restore_settings_summary" />
+         <Preference
              android:key="@string/pref_share_log_key"
              android:title="@string/pref_share_log_title"
              android:summary="@string/pref_share_log_summary" />

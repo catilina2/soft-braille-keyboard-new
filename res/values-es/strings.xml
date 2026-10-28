@@ -485,7 +485,6 @@
   <string name="pref_braille_type_default">1</string>
   <string name="pref_braille_type_key">BRAILLE_GRADE_KEY</string>
   <string name="pref_category_advanced_key">ADVANCED_LOGS</string>
-  <string name="pref_category_advanced_title">Avanzado y registros</string>
   <string name="pref_category_braille_key">BRAILLE_CATEGORY_KEY</string>
   <string name="pref_category_braille_title">Ajustes de tablas Braille</string>
   <string name="pref_category_custom_tables_title">Tablas Braille personalizadas</string>
@@ -843,4 +842,14 @@
     <item>SET_DOT_7</item>
     <item>SET_DOT_8</item>
   </string-array>
+  <string name="pref_category_advanced_title">Avanzado, copias de seguridad y registros</string>
+  <string name="pref_backup_settings_title">Copia de seguridad de todos los ajustes</string>
+  <string name="pref_backup_settings_summary">Guarda todos los ajustes del teclado en un archivo</string>
+  <string name="pref_restore_settings_title">Restaurar todos los ajustes</string>
+  <string name="pref_restore_settings_summary">Carga todos los ajustes desde un archivo de copia de seguridad</string>
+  <string name="pref_restore_settings_confirm">Esto reemplazará todos los ajustes actuales por los del archivo de copia de seguridad. ¿Continuar?</string>
+  <string name="msg_backup_saved">Copia de seguridad de los ajustes guardada</string>
+  <string name="msg_backup_failed">No se pudo guardar la copia de seguridad</string>
+  <string name="msg_restore_done">Ajustes restaurados</string>
+  <string name="msg_restore_failed">No se pudo restaurar: archivo de copia de seguridad no válido</string>
 </resources>

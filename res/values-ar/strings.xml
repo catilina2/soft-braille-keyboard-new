@@ -485,7 +485,6 @@
     <string name="pref_braille_type_default">1</string>
     <string name="pref_braille_type_key">BRAILLE_GRADE_KEY</string>
     <string name="pref_category_advanced_key">ADVANCED_LOGS</string>
-    <string name="pref_category_advanced_title">المتقدمة والسجلات</string>
     <string name="pref_category_braille_key">BRAILLE_CATEGORY_KEY</string>
     <string name="pref_category_braille_title">إعدادات جدول برايل</string>
     <string name="pref_category_custom_tables_title">جداول برايل مخصصة</string>
@@ -843,5 +842,15 @@
         <item>SET_DOT_7</item>
         <item>SET_DOT_8</item>
     </string-array>
+    <string name="pref_category_advanced_title">المتقدمة والنسخ الاحتياطي والسجلات</string>
+    <string name="pref_backup_settings_title">نسخ احتياطي لجميع الإعدادات</string>
+    <string name="pref_backup_settings_summary">يحفظ جميع إعدادات لوحة المفاتيح في ملف</string>
+    <string name="pref_restore_settings_title">استعادة جميع الإعدادات</string>
+    <string name="pref_restore_settings_summary">يحمّل جميع الإعدادات من ملف نسخة احتياطية</string>
+    <string name="pref_restore_settings_confirm">سيؤدي هذا إلى استبدال جميع الإعدادات الحالية بالإعدادات الموجودة في ملف النسخة الاحتياطية. هل تريد المتابعة؟</string>
+    <string name="msg_backup_saved">تم حفظ النسخة الاحتياطية للإعدادات</string>
+    <string name="msg_backup_failed">تعذر حفظ النسخة الاحتياطية</string>
+    <string name="msg_restore_done">تمت استعادة الإعدادات</string>
+    <string name="msg_restore_failed">تعذرت الاستعادة: ملف النسخة الاحتياطية غير صالح</string>
 </resources>
 

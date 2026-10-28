@@ -485,7 +485,6 @@
     <string name="pref_braille_type_default">1</string>
     <string name="pref_braille_type_key">BRAILLE_GRADE_KEY</string>
     <string name="pref_category_advanced_key">ADVANCED_LOGS</string>
-    <string name="pref_category_advanced_title">Nâng cao &amp;amp; Nhật ký</string>
     <string name="pref_category_braille_key">BRAILLE_CATEGORY_KEY</string>
     <string name="pref_category_braille_title">Các bảng mã Braille</string>
     <string name="pref_category_custom_tables_title">Bảng chữ nổi tùy chỉnh</string>
@@ -843,4 +842,14 @@
         <item>SET_DOT_7</item>
         <item>SET_DOT_8</item>
     </string-array>
+    <string name="pref_category_advanced_title">Nâng cao, sao lưu &amp; Nhật ký</string>
+    <string name="pref_backup_settings_title">Sao lưu tất cả cài đặt</string>
+    <string name="pref_backup_settings_summary">Lưu mọi cài đặt của bàn phím vào một tệp</string>
+    <string name="pref_restore_settings_title">Khôi phục tất cả cài đặt</string>
+    <string name="pref_restore_settings_summary">Tải mọi cài đặt từ tệp sao lưu</string>
+    <string name="pref_restore_settings_confirm">Thao tác này sẽ thay thế toàn bộ cài đặt hiện tại bằng cài đặt trong tệp sao lưu. Tiếp tục?</string>
+    <string name="msg_backup_saved">Đã lưu bản sao lưu cài đặt</string>
+    <string name="msg_backup_failed">Không thể lưu bản sao lưu</string>
+    <string name="msg_restore_done">Đã khôi phục cài đặt</string>
+    <string name="msg_restore_failed">Không thể khôi phục: tệp sao lưu không hợp lệ</string>
 </resources>

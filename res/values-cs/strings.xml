@@ -485,7 +485,6 @@
     <string name="pref_braille_type_default">1</string>
     <string name="pref_braille_type_key">BRAILLE_GRADE_KEY</string>
     <string name="pref_category_advanced_key">ADVANCED_LOGS</string>
-    <string name="pref_category_advanced_title">Pokročilé a protokoly</string>
     <string name="pref_category_braille_key">BRAILLE_CATEGORY_KEY</string>
     <string name="pref_category_braille_title">Nastavení překladové tabulky</string>
     <string name="pref_category_custom_tables_title">Vlastní braillské tabulky</string>
@@ -843,4 +842,14 @@
         <item>SET_DOT_7</item>
         <item>SET_DOT_8</item>
     </string-array>
+    <string name="pref_category_advanced_title">Pokročilé, zálohy a protokoly</string>
+    <string name="pref_backup_settings_title">Zálohovat všechna nastavení</string>
+    <string name="pref_backup_settings_summary">Uloží všechna nastavení klávesnice do souboru</string>
+    <string name="pref_restore_settings_title">Obnovit všechna nastavení</string>
+    <string name="pref_restore_settings_summary">Načte všechna nastavení ze záložního souboru</string>
+    <string name="pref_restore_settings_confirm">Tím se všechna aktuální nastavení nahradí nastavením ze záložního souboru. Pokračovat?</string>
+    <string name="msg_backup_saved">Záloha nastavení byla uložena</string>
+    <string name="msg_backup_failed">Zálohu se nepodařilo uložit</string>
+    <string name="msg_restore_done">Nastavení bylo obnoveno</string>
+    <string name="msg_restore_failed">Obnovení se nezdařilo: neplatný záložní soubor</string>
 </resources>

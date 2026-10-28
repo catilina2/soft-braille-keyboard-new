@@ -485,7 +485,6 @@
     <string name="pref_braille_type_default">1</string>
     <string name="pref_braille_type_key">BRAILLE_GRADE_KEY</string>
     <string name="pref_category_advanced_key">ADVANCED_LOGS</string>
-    <string name="pref_category_advanced_title">高级和日志</string>
     <string name="pref_category_braille_key">BRAILLE_CATEGORY_KEY</string>
     <string name="pref_category_braille_title">點字對照表</string>
     <string name="pref_category_custom_tables_title">定制盲文表</string>
@@ -843,4 +842,14 @@
         <item>SET_DOT_7</item>
         <item>SET_DOT_8</item>
     </string-array>
+    <string name="pref_category_advanced_title">高级、备份和日志</string>
+    <string name="pref_backup_settings_title">备份所有设置</string>
+    <string name="pref_backup_settings_summary">将键盘的所有设置保存到文件</string>
+    <string name="pref_restore_settings_title">恢复所有设置</string>
+    <string name="pref_restore_settings_summary">从备份文件加载所有设置</string>
+    <string name="pref_restore_settings_confirm">这将用备份文件中的设置替换当前所有设置。是否继续？</string>
+    <string name="msg_backup_saved">设置备份已保存</string>
+    <string name="msg_backup_failed">无法保存备份</string>
+    <string name="msg_restore_done">设置已恢复</string>
+    <string name="msg_restore_failed">无法恢复：备份文件无效</string>
 </resources>

@@ -33,6 +33,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.preference.CheckBoxPreference;
 import androidx.preference.ListPreference;
@@ -124,12 +126,34 @@ public class PreferenceIME extends AppCompatActivity implements
         private BrailleParser brailleParser;
         private TextToSpeech tts;
 
+        private ActivityResultLauncher<Intent> backupLauncher;
+        private ActivityResultLauncher<Intent> restoreLauncher;
+
         public static Settings newInstance(String rootKey) {
             Settings fragment = new Settings();
             Bundle args = new Bundle();
             args.putString(PreferenceFragmentCompat.ARG_PREFERENCE_ROOT, rootKey);
             fragment.setArguments(args);
             return fragment;
+        }
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            backupLauncher = registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    result -> {
+                        if (result.getResultCode() == android.app.Activity.RESULT_OK && result.getData() != null) {
+                            writeBackup(result.getData().getData());
+                        }
+                    });
+            restoreLauncher = registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    result -> {
+                        if (result.getResultCode() == android.app.Activity.RESULT_OK && result.getData() != null) {
+                            confirmRestore(result.getData().getData());
+                        }
+                    });
         }
 
         @Override
@@ -280,6 +304,58 @@ public class PreferenceIME extends AppCompatActivity implements
             Preference clear = findPreference(getString(R.string.pref_clear_log_key));
             if (share != null) share.setOnPreferenceClickListener(p -> { shareLog(); return true; });
             if (clear != null) clear.setOnPreferenceClickListener(p -> { clearLog(); return true; });
+
+            Preference backup = findPreference("pref_backup_settings_key");
+            Preference restore = findPreference("pref_restore_settings_key");
+            if (backup != null) backup.setOnPreferenceClickListener(p -> {
+                Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT)
+                        .addCategory(Intent.CATEGORY_OPENABLE)
+                        .setType("application/json")
+                        .putExtra(Intent.EXTRA_TITLE, "soft_braille_keyboard_settings.json");
+                backupLauncher.launch(intent);
+                return true;
+            });
+            if (restore != null) restore.setOnPreferenceClickListener(p -> {
+                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT)
+                        .addCategory(Intent.CATEGORY_OPENABLE)
+                        .setType("*/*");
+                restoreLauncher.launch(intent);
+                return true;
+            });
+        }
+
+        // --- Backup Logic ---
+        private void writeBackup(Uri uri) {
+            boolean ok = false;
+            if (uri != null) {
+                try (OutputStream os = getActivity().getContentResolver().openOutputStream(uri)) {
+                    ok = os != null && SettingsBackup.exportTo(getActivity(), os);
+                } catch (Exception e) {
+                    android.util.Log.e("PreferenceIME", "Backup error", e);
+                }
+            }
+            Toast.makeText(getActivity(), ok ? R.string.msg_backup_saved : R.string.msg_backup_failed, Toast.LENGTH_SHORT).show();
+        }
+
+        private void confirmRestore(Uri uri) {
+            if (uri == null) return;
+            new android.app.AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.pref_restore_settings_title)
+                    .setMessage(R.string.pref_restore_settings_confirm)
+                    .setPositiveButton(R.string.btn_ok, (dialog, which) -> restoreBackup(uri))
+                    .setNegativeButton(R.string.btn_cancel, null)
+                    .show();
+        }
+
+        private void restoreBackup(Uri uri) {
+            boolean ok = false;
+            try (InputStream is = getActivity().getContentResolver().openInputStream(uri)) {
+                ok = is != null && SettingsBackup.importFrom(getActivity(), is);
+            } catch (Exception e) {
+                android.util.Log.e("PreferenceIME", "Restore error", e);
+            }
+            Toast.makeText(getActivity(), ok ? R.string.msg_restore_done : R.string.msg_restore_failed, Toast.LENGTH_LONG).show();
+            if (ok) getActivity().recreate();
         }
 
         private void setupVersionPreference() {

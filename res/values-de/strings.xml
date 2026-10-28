@@ -485,7 +485,6 @@
     <string name="pref_braille_type_default">1</string>
     <string name="pref_braille_type_key">BRAILLE_GRADE_KEY</string>
     <string name="pref_category_advanced_key">ADVANCED_LOGS</string>
-    <string name="pref_category_advanced_title">Erweitert und Protokolle</string>
     <string name="pref_category_braille_key">BRAILLE_CATEGORY_KEY</string>
     <string name="pref_category_braille_title">Braille Tabellen</string>
     <string name="pref_category_custom_tables_title">Benutzerdefinierte Braille-Tabellen</string>
@@ -843,4 +842,14 @@
         <item>SET_DOT_7</item>
         <item>SET_DOT_8</item>
     </string-array>
+    <string name="pref_category_advanced_title">Erweitert, Backups und Protokolle</string>
+    <string name="pref_backup_settings_title">Alle Einstellungen sichern</string>
+    <string name="pref_backup_settings_summary">Speichert alle Einstellungen der Tastatur in einer Datei</string>
+    <string name="pref_restore_settings_title">Alle Einstellungen wiederherstellen</string>
+    <string name="pref_restore_settings_summary">Lädt alle Einstellungen aus einer Sicherungsdatei</string>
+    <string name="pref_restore_settings_confirm">Dadurch werden alle aktuellen Einstellungen durch die der Sicherungsdatei ersetzt. Fortfahren?</string>
+    <string name="msg_backup_saved">Einstellungssicherung gespeichert</string>
+    <string name="msg_backup_failed">Die Sicherung konnte nicht gespeichert werden</string>
+    <string name="msg_restore_done">Einstellungen wiederhergestellt</string>
+    <string name="msg_restore_failed">Wiederherstellung nicht möglich: ungültige Sicherungsdatei</string>
 </resources>
