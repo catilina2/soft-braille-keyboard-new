@@ -273,7 +273,7 @@
     <string name="import_error">Chyba při importu gest: %1$s</string>
     <string name="import_no_valid_data">V souboru nebyla nalezena žádná platná data gest</string>
     <string name="pref_group_single_finger">Přejetí jedním prstem</string>
-    <string name="pref_group_two_fingers">Přejetí dvěma prsty (pouze dolů)</string>
+    <string name="pref_group_two_fingers">Přejetí dvěma prsty</string>
     <string name="pref_group_hold_swipe">Jednou rukou držte tečku a druhou přejeďte</string>
     <string name="high">Vysoká</string>
     <string name="hint_author">Autor (např. Sergio)</string>

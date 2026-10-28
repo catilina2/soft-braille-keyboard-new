@@ -82,6 +82,8 @@ public abstract class Pad {
         HOLD_TWO_LEFT, HOLD_TWO_RIGHT, HOLD_TWO_UP, HOLD_TWO_DOWN,
         HOLD_FIVE_LEFT, HOLD_FIVE_RIGHT, HOLD_FIVE_UP, HOLD_FIVE_DOWN,
         LEFT_TWO_DOWN, RIGHT_TWO_DOWN,
+        LEFT_TWO_LEFT, LEFT_TWO_RIGHT, LEFT_TWO_UP,
+        RIGHT_TWO_LEFT, RIGHT_TWO_RIGHT, RIGHT_TWO_UP,
         TWO_FINGERS_DOWN, DOTS_FOUR_SIX_RIGHT, EMOJI_MODE, AUTOCAPS_TOGGLE;
 
         public static Swipe valueOf(int value) {
@@ -95,7 +97,16 @@ public abstract class Pad {
             final int VALUE_TWO_RIGHT = 16;
             final int VALUE_TWO_DOWN = 24;
             final int VALUE_TWO_UP = 32;
-            final int VALUE_TWO_FINGERS_DOWN = 27;
+            final int VALUE_LEFT_TWO_DOWN = 27; // was TWO_FINGERS_DOWN
+            final int VALUE_RIGHT_TWO_DOWN = 13824;
+            // two fingers on dots 1+2 (left hand) or 4+5 (right hand) moving together: the direction of each
+            // dot is 3 bits (left=1, right=2, down=3, up=4), dot 1 at bit 0, dot 2 at bit 3, dot 4 at bit 9, dot 5 at bit 12
+            final int VALUE_LEFT_TWO_LEFT = 9;
+            final int VALUE_LEFT_TWO_RIGHT = 18;
+            final int VALUE_LEFT_TWO_UP = 36;
+            final int VALUE_RIGHT_TWO_LEFT = 4608;
+            final int VALUE_RIGHT_TWO_RIGHT = 9216;
+            final int VALUE_RIGHT_TWO_UP = 18432;
             final int VALUE_TWO_FINGERS_DOWN_PARTIAL_1 = 31;
             final int VALUE_TWO_FINGERS_DOWN_PARTIAL_2 = 59;
             final int VALUE_DOTS_FOUR_SIX_RIGHT = 66560;
@@ -139,6 +150,30 @@ public abstract class Pad {
             final int VALUE_HOLD_THREE_FOUR_UP = 2496;
             final int VALUE_HOLD_THREE_FIVE_UP = 16832;
             final int VALUE_HOLD_THREE_SIX_UP = 131520;
+            final int VALUE_HOLD_TWO_FOUR_LEFT = 568;
+            final int VALUE_HOLD_TWO_FIVE_LEFT = 4152;
+            final int VALUE_HOLD_TWO_SIX_LEFT = 32824;
+            final int VALUE_HOLD_TWO_FOUR_RIGHT = 1080;
+            final int VALUE_HOLD_TWO_FIVE_RIGHT = 8248;
+            final int VALUE_HOLD_TWO_SIX_RIGHT = 65592;
+            final int VALUE_HOLD_TWO_FOUR_DOWN = 1592;
+            final int VALUE_HOLD_TWO_FIVE_DOWN = 12344;
+            final int VALUE_HOLD_TWO_SIX_DOWN = 98360;
+            final int VALUE_HOLD_TWO_FOUR_UP = 2104;
+            final int VALUE_HOLD_TWO_FIVE_UP = 16440;
+            final int VALUE_HOLD_TWO_SIX_UP = 131128;
+            final int VALUE_HOLD_FIVE_ONE_LEFT = 28673;
+            final int VALUE_HOLD_FIVE_TWO_LEFT = 28680;
+            final int VALUE_HOLD_FIVE_THREE_LEFT = 28736;
+            final int VALUE_HOLD_FIVE_ONE_RIGHT = 28674;
+            final int VALUE_HOLD_FIVE_TWO_RIGHT = 28688;
+            final int VALUE_HOLD_FIVE_THREE_RIGHT = 28800;
+            final int VALUE_HOLD_FIVE_ONE_DOWN = 28675;
+            final int VALUE_HOLD_FIVE_TWO_DOWN = 28696;
+            final int VALUE_HOLD_FIVE_THREE_DOWN = 28864;
+            final int VALUE_HOLD_FIVE_ONE_UP = 28676;
+            final int VALUE_HOLD_FIVE_TWO_UP = 28704;
+            final int VALUE_HOLD_FIVE_THREE_UP = 28928;
             final int VALUE_HOLD_ONE_FOUR_UP = 2055;
             final int VALUE_HOLD_ONE_FIVE_UP = 16391;
             final int VALUE_HOLD_ONE_SIX_UP = 131079;
@@ -182,10 +217,24 @@ public abstract class Pad {
                 return TWO_DOWN;
             case VALUE_TWO_UP:
                 return TWO_UP;
-            case VALUE_TWO_FINGERS_DOWN:
+            case VALUE_LEFT_TWO_DOWN:
             case VALUE_TWO_FINGERS_DOWN_PARTIAL_1:
             case VALUE_TWO_FINGERS_DOWN_PARTIAL_2:
-                return TWO_FINGERS_DOWN;
+                return LEFT_TWO_DOWN;
+            case VALUE_RIGHT_TWO_DOWN:
+                return RIGHT_TWO_DOWN;
+            case VALUE_LEFT_TWO_LEFT:
+                return LEFT_TWO_LEFT;
+            case VALUE_LEFT_TWO_RIGHT:
+                return LEFT_TWO_RIGHT;
+            case VALUE_LEFT_TWO_UP:
+                return LEFT_TWO_UP;
+            case VALUE_RIGHT_TWO_LEFT:
+                return RIGHT_TWO_LEFT;
+            case VALUE_RIGHT_TWO_RIGHT:
+                return RIGHT_TWO_RIGHT;
+            case VALUE_RIGHT_TWO_UP:
+                return RIGHT_TWO_UP;
             case VALUE_DOTS_FOUR_SIX_RIGHT:
                 return DOTS_FOUR_SIX_RIGHT;
             case VALUE_THREE_LEFT:
@@ -286,6 +335,38 @@ public abstract class Pad {
             case VALUE_HOLD_FOUR_TWO_UP:
             case VALUE_HOLD_FOUR_THREE_UP:
                 return HOLD_FOUR_UP;
+            case VALUE_HOLD_TWO_SIX_LEFT:
+            case VALUE_HOLD_TWO_FIVE_LEFT:
+            case VALUE_HOLD_TWO_FOUR_LEFT:
+                return HOLD_TWO_LEFT;
+            case VALUE_HOLD_TWO_SIX_RIGHT:
+            case VALUE_HOLD_TWO_FIVE_RIGHT:
+            case VALUE_HOLD_TWO_FOUR_RIGHT:
+                return HOLD_TWO_RIGHT;
+            case VALUE_HOLD_TWO_SIX_UP:
+            case VALUE_HOLD_TWO_FIVE_UP:
+            case VALUE_HOLD_TWO_FOUR_UP:
+                return HOLD_TWO_UP;
+            case VALUE_HOLD_TWO_SIX_DOWN:
+            case VALUE_HOLD_TWO_FIVE_DOWN:
+            case VALUE_HOLD_TWO_FOUR_DOWN:
+                return HOLD_TWO_DOWN;
+            case VALUE_HOLD_FIVE_THREE_LEFT:
+            case VALUE_HOLD_FIVE_TWO_LEFT:
+            case VALUE_HOLD_FIVE_ONE_LEFT:
+                return HOLD_FIVE_LEFT;
+            case VALUE_HOLD_FIVE_THREE_RIGHT:
+            case VALUE_HOLD_FIVE_TWO_RIGHT:
+            case VALUE_HOLD_FIVE_ONE_RIGHT:
+                return HOLD_FIVE_RIGHT;
+            case VALUE_HOLD_FIVE_THREE_UP:
+            case VALUE_HOLD_FIVE_TWO_UP:
+            case VALUE_HOLD_FIVE_ONE_UP:
+                return HOLD_FIVE_UP;
+            case VALUE_HOLD_FIVE_THREE_DOWN:
+            case VALUE_HOLD_FIVE_TWO_DOWN:
+            case VALUE_HOLD_FIVE_ONE_DOWN:
+                return HOLD_FIVE_DOWN;
             default:
                 return UNKNOWN;
             }

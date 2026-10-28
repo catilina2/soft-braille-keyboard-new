@@ -273,7 +273,7 @@
     <string name="import_error">Lỗi khi nhập cử chỉ: %1$s</string>
     <string name="import_no_valid_data">Không tìm thấy dữ liệu cử chỉ hợp lệ trong tệp</string>
     <string name="pref_group_single_finger">Vuốt một ngón tay</string>
-    <string name="pref_group_two_fingers">Vuốt bằng hai ngón tay (Chỉ xuống)</string>
+    <string name="pref_group_two_fingers">Vuốt bằng hai ngón tay</string>
     <string name="pref_group_hold_swipe">Giữ một dấu chấm bằng một tay và vuốt bằng tay kia</string>
     <string name="high">Cao</string>
     <string name="hint_author">Tác giả (ví dụ: Sergio)</string>

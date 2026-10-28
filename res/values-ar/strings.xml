@@ -273,7 +273,7 @@
     <string name="import_error">خطأ في استيراد الإيماءات: %1$s</string>
     <string name="import_no_valid_data">لم يتم العثور على بيانات إيماءات صالحة في الملف</string>
     <string name="pref_group_single_finger">السحب بإصبع واحد</string>
-    <string name="pref_group_two_fingers">السحب بإصبعين (للأسفل فقط)</string>
+    <string name="pref_group_two_fingers">السحب بإصبعين</string>
     <string name="pref_group_hold_swipe">أمسك نقطة بيد واحدة واسحب باليد الأخرى</string>
     <string name="high">عالية</string>
     <string name="hint_author">المؤلف (على سبيل المثال سيرجيو)</string>

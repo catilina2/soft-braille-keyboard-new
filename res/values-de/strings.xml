@@ -197,6 +197,12 @@
     <string name="swipe_six_down">Punkt 6: Nach unten wischen.</string>
     <string name="swipe_left_two_down">Links: Zwei Finger nach unten.</string>
     <string name="swipe_right_two_down">Rechts: Zwei Finger nach unten.</string>
+    <string name="swipe_left_two_left">Links: Zwei Finger nach links.</string>
+    <string name="swipe_left_two_right">Links: Zwei Finger nach rechts.</string>
+    <string name="swipe_left_two_up">Links: Zwei Finger nach oben.</string>
+    <string name="swipe_right_two_left">Rechts: Zwei Finger nach links.</string>
+    <string name="swipe_right_two_right">Rechts: Zwei Finger nach rechts.</string>
+    <string name="swipe_right_two_up">Rechts: Zwei Finger nach oben.</string>
     <string name="swipe_hold_one_left">Punkt 1: Halten Sie die Taste gedrückt und wischen Sie mit der anderen Hand nach links.</string>
     <string name="swipe_hold_one_right">Punkt 1: Halten Sie die Taste gedrückt und wischen Sie mit der anderen Hand nach rechts.</string>
     <string name="swipe_hold_one_up">Punkt 1: Halten und mit der anderen Hand nach oben wischen.</string>
@@ -273,7 +279,7 @@
     <string name="import_error">Fehler beim Importieren von Gesten: %1$s</string>
     <string name="import_no_valid_data">In der Datei wurden keine gültigen Gestendaten gefunden</string>
     <string name="pref_group_single_finger">Wischen mit einem Finger</string>
-    <string name="pref_group_two_fingers">Zwei-Finger-Wischen (nur nach unten)</string>
+    <string name="pref_group_two_fingers">Zwei-Finger-Wischen</string>
     <string name="pref_group_hold_swipe">Halten Sie einen Punkt mit einer Hand und streichen Sie mit der anderen</string>
     <string name="high">Oben</string>
     <string name="hint_author">Autor (z. B. Sergio)</string>

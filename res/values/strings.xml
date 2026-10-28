@@ -207,6 +207,12 @@
     
     <string name="swipe_left_two_down">Left: Two fingers Down.</string>
     <string name="swipe_right_two_down">Right: Two fingers Down.</string>
+    <string name="swipe_left_two_left">Left: Two fingers Left.</string>
+    <string name="swipe_left_two_right">Left: Two fingers Right.</string>
+    <string name="swipe_left_two_up">Left: Two fingers Up.</string>
+    <string name="swipe_right_two_left">Right: Two fingers Left.</string>
+    <string name="swipe_right_two_right">Right: Two fingers Right.</string>
+    <string name="swipe_right_two_up">Right: Two fingers Up.</string>
     
     <string name="swipe_hold_one_left">Dot 1: Hold and Swipe Left with the other hand.</string>
     <string name="swipe_hold_one_right">Dot 1: Hold and Swipe Right with the other hand.</string>
@@ -293,7 +299,7 @@
     <string name="import_no_valid_data">No valid gesture data found in file</string>
     
     <string name="pref_group_single_finger">Single Finger Swipes</string>
-    <string name="pref_group_two_fingers">Two-Finger Swipes (Down only)</string>
+    <string name="pref_group_two_fingers">Two-Finger Swipes</string>
     <string name="pref_group_hold_swipe">Hold a dot with one hand and swipe with the other</string>
 
 

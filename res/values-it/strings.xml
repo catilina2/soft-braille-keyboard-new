@@ -732,6 +732,12 @@
 
     <string name="swipe_left_two_down">Scorri in basso punti 12.</string>
     <string name="swipe_right_two_down">Scorri in basso punti 45.</string>
+    <string name="swipe_left_two_left">Scorri a sinistra punti 12.</string>
+    <string name="swipe_left_two_right">Scorri a destra punti 12.</string>
+    <string name="swipe_left_two_up">Scorri in alto punti 12.</string>
+    <string name="swipe_right_two_left">Scorri a sinistra punti 45.</string>
+    <string name="swipe_right_two_right">Scorri a destra punti 45.</string>
+    <string name="swipe_right_two_up">Scorri in alto punti 45.</string>
 
     <string name="swipe_hold_one_left">Tieni Punto 1 e scorri a sinistra con l\'altra mano.</string>
     <string name="swipe_hold_one_right">Tieni Punto 1 e scorri a destra con l\'altra mano.</string>
@@ -816,7 +822,7 @@
     <string name="import_no_valid_data">Nessun dato valido per i gesti trovato nel file</string>
     
     <string name="pref_group_single_finger">Scorrimenti a un dito</string>
-    <string name="pref_group_two_fingers">Scorrimenti a due dita (Solo in basso)</string>
+    <string name="pref_group_two_fingers">Scorrimenti a due dita</string>
     <string name="pref_group_hold_swipe">Tieni un punto con una mano e scorri con l\'altra mano</string>
 
     <!-- BrailleAction Arrays (IT) -->

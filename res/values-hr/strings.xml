@@ -273,7 +273,7 @@
     <string name="import_error">Pogreška pri uvozu pokreta: %1$s</string>
     <string name="import_no_valid_data">U datoteci nisu pronađeni valjani podaci o pokretima</string>
     <string name="pref_group_single_finger">Prevlačenje jednim prstom</string>
-    <string name="pref_group_two_fingers">Prelazi s dva prsta (samo prema dolje)</string>
+    <string name="pref_group_two_fingers">Prelazi s dva prsta</string>
     <string name="pref_group_hold_swipe">Jednom rukom držite točku, a drugom prijeđite</string>
     <string name="high">Visoko</string>
     <string name="hint_author">Autor (npr. Sergio)</string>

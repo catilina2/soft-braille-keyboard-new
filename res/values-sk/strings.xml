@@ -273,7 +273,7 @@
     <string name="import_error">Chyba pri importovaní gest: %1$s</string>
     <string name="import_no_valid_data">V súbore sa nenašli žiadne platné údaje gesta</string>
     <string name="pref_group_single_finger">Prejdenie jedným prstom</string>
-    <string name="pref_group_two_fingers">Potiahnutie dvoma prstami (iba nadol)</string>
+    <string name="pref_group_two_fingers">Potiahnutie dvoma prstami</string>
     <string name="pref_group_hold_swipe">Jednou rukou držte bod a druhou potiahnite prstom</string>
     <string name="high">Vysoká</string>
     <string name="hint_author">Autor (napr. Sergio)</string>

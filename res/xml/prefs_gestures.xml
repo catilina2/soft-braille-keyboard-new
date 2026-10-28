@@ -146,14 +146,50 @@
 
     <PreferenceCategory android:title="@string/pref_group_two_fingers">
         <ListPreference
-            android:key="gesture_mapping_LEFT_TWO_DOWN"
-            android:title="@string/swipe_left_two_down"
+            android:key="gesture_mapping_RIGHT_TWO_UP"
+            android:title="@string/swipe_right_two_up"
             android:entries="@array/braille_action_entries"
             android:entryValues="@array/braille_action_values" />
 
         <ListPreference
             android:key="gesture_mapping_RIGHT_TWO_DOWN"
             android:title="@string/swipe_right_two_down"
+            android:entries="@array/braille_action_entries"
+            android:entryValues="@array/braille_action_values" />
+
+        <ListPreference
+            android:key="gesture_mapping_RIGHT_TWO_LEFT"
+            android:title="@string/swipe_right_two_left"
+            android:entries="@array/braille_action_entries"
+            android:entryValues="@array/braille_action_values" />
+
+        <ListPreference
+            android:key="gesture_mapping_RIGHT_TWO_RIGHT"
+            android:title="@string/swipe_right_two_right"
+            android:entries="@array/braille_action_entries"
+            android:entryValues="@array/braille_action_values" />
+
+        <ListPreference
+            android:key="gesture_mapping_LEFT_TWO_UP"
+            android:title="@string/swipe_left_two_up"
+            android:entries="@array/braille_action_entries"
+            android:entryValues="@array/braille_action_values" />
+
+        <ListPreference
+            android:key="gesture_mapping_LEFT_TWO_DOWN"
+            android:title="@string/swipe_left_two_down"
+            android:entries="@array/braille_action_entries"
+            android:entryValues="@array/braille_action_values" />
+
+        <ListPreference
+            android:key="gesture_mapping_LEFT_TWO_LEFT"
+            android:title="@string/swipe_left_two_left"
+            android:entries="@array/braille_action_entries"
+            android:entryValues="@array/braille_action_values" />
+
+        <ListPreference
+            android:key="gesture_mapping_LEFT_TWO_RIGHT"
+            android:title="@string/swipe_left_two_right"
             android:entries="@array/braille_action_entries"
             android:entryValues="@array/braille_action_values" />
     </PreferenceCategory>

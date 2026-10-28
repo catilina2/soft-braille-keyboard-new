@@ -197,6 +197,12 @@
     <string name="swipe_six_down">Point 6 : faites glisser votre doigt vers le bas.</string>
     <string name="swipe_left_two_down">Gauche : deux doigts vers le bas.</string>
     <string name="swipe_right_two_down">À droite : deux doigts vers le bas.</string>
+    <string name="swipe_left_two_left">Gauche : deux doigts vers la gauche.</string>
+    <string name="swipe_left_two_right">Gauche : deux doigts vers la droite.</string>
+    <string name="swipe_left_two_up">Gauche : deux doigts vers le haut.</string>
+    <string name="swipe_right_two_left">À droite : deux doigts vers la gauche.</string>
+    <string name="swipe_right_two_right">À droite : deux doigts vers la droite.</string>
+    <string name="swipe_right_two_up">À droite : deux doigts vers le haut.</string>
     <string name="swipe_hold_one_left">Point 1 : maintenez et balayez vers la gauche avec l\'autre main.</string>
     <string name="swipe_hold_one_right">Point 1 : maintenez enfoncé et faites glisser votre doigt vers la droite avec l\'autre main.</string>
     <string name="swipe_hold_one_up">Point 1 : maintenez et faites glisser votre doigt vers le haut avec l\'autre main.</string>
@@ -273,7 +279,7 @@
     <string name="import_error">Erreur lors de l\'importation des gestes : %1$s</string>
     <string name="import_no_valid_data">Aucune donnée gestuelle valide trouvée dans le fichier</string>
     <string name="pref_group_single_finger">Balayages avec un seul doigt</string>
-    <string name="pref_group_two_fingers">Balayages à deux doigts (vers le bas uniquement)</string>
+    <string name="pref_group_two_fingers">Balayages à deux doigts</string>
     <string name="pref_group_hold_swipe">Tenez un point d\'une main et faites glisser avec l\'autre</string>
     <string name="high">Élevé</string>
     <string name="hint_author">Auteur (par exemple Sergio)</string>

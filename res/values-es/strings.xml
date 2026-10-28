@@ -197,6 +197,12 @@
   <string name="swipe_six_down">Punto 6: deslizar hacia abajo.</string>
   <string name="swipe_left_two_down">Izquierda: dos dedos hacia abajo.</string>
   <string name="swipe_right_two_down">Derecha: dos dedos hacia abajo.</string>
+  <string name="swipe_left_two_left">Izquierda: dos dedos hacia la izquierda.</string>
+  <string name="swipe_left_two_right">Izquierda: dos dedos hacia la derecha.</string>
+  <string name="swipe_left_two_up">Izquierda: dos dedos hacia arriba.</string>
+  <string name="swipe_right_two_left">Derecha: dos dedos hacia la izquierda.</string>
+  <string name="swipe_right_two_right">Derecha: dos dedos hacia la derecha.</string>
+  <string name="swipe_right_two_up">Derecha: dos dedos hacia arriba.</string>
   <string name="swipe_hold_one_left">Punto 1: mantén presionado y desliza hacia la izquierda con la otra mano.</string>
   <string name="swipe_hold_one_right">Punto 1: Mantén presionado y desliza hacia la derecha con la otra mano.</string>
   <string name="swipe_hold_one_up">Punto 1: Mantén presionado y desliza hacia arriba con la otra mano.</string>
@@ -273,7 +279,7 @@
   <string name="import_error">Error al importar gestos: %1$s</string>
   <string name="import_no_valid_data">No se encontraron datos de gestos válidos en el archivo</string>
   <string name="pref_group_single_finger">Deslizamientos con un solo dedo</string>
-  <string name="pref_group_two_fingers">Deslizar dos dedos (solo hacia abajo)</string>
+  <string name="pref_group_two_fingers">Deslizar dos dedos</string>
   <string name="pref_group_hold_swipe">Sostén un punto con una mano y desliza con la otra.</string>
   <string name="high">Alta</string>
   <string name="hint_author">Autor (por ejemplo, Sergio)</string>

@@ -273,7 +273,7 @@
     <string name="import_error">导入手势时出错：%1$s</string>
     <string name="import_no_valid_data">文件中找不到有效的手势数据</string>
     <string name="pref_group_single_finger">单指滑动</string>
-    <string name="pref_group_two_fingers">两指滑动（仅向下）</string>
+    <string name="pref_group_two_fingers">两指滑动</string>
     <string name="pref_group_hold_swipe">用一只手握住一个点，然后用另一只手滑动</string>
     <string name="high">高</string>
     <string name="hint_author">作者（例如 Sergio）</string>

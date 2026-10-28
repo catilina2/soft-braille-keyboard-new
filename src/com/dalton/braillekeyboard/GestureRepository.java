@@ -29,6 +29,12 @@ public class GestureRepository {
 
         defaultMappings.put(Swipe.LEFT_TWO_DOWN, BrailleAction.CLOSE_KEYBOARD);
         defaultMappings.put(Swipe.RIGHT_TWO_DOWN, BrailleAction.NONE);
+        defaultMappings.put(Swipe.LEFT_TWO_LEFT, BrailleAction.NONE);
+        defaultMappings.put(Swipe.LEFT_TWO_RIGHT, BrailleAction.NONE);
+        defaultMappings.put(Swipe.LEFT_TWO_UP, BrailleAction.NONE);
+        defaultMappings.put(Swipe.RIGHT_TWO_LEFT, BrailleAction.NONE);
+        defaultMappings.put(Swipe.RIGHT_TWO_RIGHT, BrailleAction.NONE);
+        defaultMappings.put(Swipe.RIGHT_TWO_UP, BrailleAction.NONE);
 
         defaultMappings.put(Swipe.THREE_LEFT, BrailleAction.MOVE_LEFT_LINE);
         defaultMappings.put(Swipe.THREE_RIGHT, BrailleAction.MOVE_RIGHT_LINE);

@@ -273,7 +273,7 @@
     <string name="import_error">Błąd podczas importowania gestów: %1$s</string>
     <string name="import_no_valid_data">W pliku nie znaleziono prawidłowych danych gestów</string>
     <string name="pref_group_single_finger">Przesunięcie pojedynczym palcem</string>
-    <string name="pref_group_two_fingers">Przesunięcie dwoma palcami (tylko w dół)</string>
+    <string name="pref_group_two_fingers">Przesunięcie dwoma palcami</string>
     <string name="pref_group_hold_swipe">Przytrzymaj punkt jedną ręką i przesuń drugą</string>
     <string name="high">Duża</string>
     <string name="hint_author">Autor (np. Koszałek Opałek)</string>

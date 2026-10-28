@@ -273,7 +273,7 @@
     <string name="import_error">Ошибка импорта жестов: %1$s.</string>
     <string name="import_no_valid_data">В файле не найдены действительные данные о жестах</string>
     <string name="pref_group_single_finger">Проведение одним пальцем</string>
-    <string name="pref_group_two_fingers">Проведение двумя пальцами (только вниз)</string>
+    <string name="pref_group_two_fingers">Проведение двумя пальцами</string>
     <string name="pref_group_hold_swipe">Удерживайте точку одной рукой и проведите по ней другой</string>
     <string name="high">Высокая</string>
     <string name="hint_author">Автор (например, Серджио)</string>
