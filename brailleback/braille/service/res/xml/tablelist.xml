@@ -80,6 +80,7 @@
     <table id="pl-g1" locale="pl" dots="6" grade="1" fileName="Pl-Pl-g1.utb" />
     <table id="pl-comp8" locale="pl" dots="8" fileName="pl-pl-comp8.ctb" />
     <table id="pt-g1" locale="pt" dots="6" grade="1" fileName="pt-pt-g1.utb" />
+    <table id="pt-br-g1" locale="pt_BR" dots="6" grade="1" fileName="pt-br-mhs-g1.utb" />
     <table id="pt-g2" locale="pt" dots="6" grade="2" fileName="pt-pt-g2.ctb" />
     <table id="pt-comp8" locale="pt" dots="8" fileName="pt-comp6.utb" />
     <table id="ro-g0" locale="ro" dots="6" grade="0" fileName="ro-g0.utb" />
