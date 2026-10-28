@@ -689,8 +689,8 @@
     <string name="table_header_author">Autor:</string>
     <string name="table_header_desc">Descrição:</string>
     <string name="table_section_base">Regras básicas</string>
-    <string name="table_section_high">HIGH PRIORITY</string>
-    <string name="table_section_standard">STANDARD PRIORITY</string>
+    <string name="table_section_high">PRIORIDADE ALTA</string>
+    <string name="table_section_standard">PRIORIDADE PADRÃO</string>
     <string name="table_variant_unofficial">Não oficial</string>
     <string name="btn_edit_header">Editar cabeçalho/metadados da tabela</string>
     <string name="btn_move_to_pos">Mover para posição</string>
@@ -843,4 +843,23 @@
         <item>SET_DOT_7</item>
         <item>SET_DOT_8</item>
     </string-array>
+    <string name="pref_keyboard_sound_theme_key">pref_keyboard_sound_theme</string>
+    <string name="pref_keyboard_sound_theme_title">Tema de som do teclado</string>
+    <string name="pref_keyboard_sound_theme_summary">Escolha os efeitos sonoros ao pressionar as teclas</string>
+    <string name="sound_theme_system">Padrão do sistema</string>
+    <string name="sound_theme_mechanical">Teclado mecânico</string>
+    <string name="sound_theme_typewriter">Máquina de escrever</string>
+    <string name="sound_theme_bubble">Bolhas</string>
+    <string name="sound_theme_custom">Tema personalizado (pasta)</string>
+    <string name="pref_custom_sound_theme_folder_key">pref_custom_sound_theme_folder</string>
+    <string name="pref_custom_sound_theme_folder_uri_key">pref_custom_sound_theme_folder_uri</string>
+    <string name="pref_custom_sound_theme_folder_title">Pasta do tema de som personalizado</string>
+    <string name="pref_custom_sound_theme_folder_summary">Escolha a pasta que contém tap.wav, space.wav, delete.wav e enter.wav</string>
+    <string name="pref_keyboard_sound_volume_key">pref_keyboard_sound_volume</string>
+    <string name="pref_keyboard_sound_volume_title">Volume do tema de som</string>
+    <string name="pref_keyboard_sound_volume_dialog">Ajustar o volume do tema de som</string>
+    <string name="toast_custom_sound_theme_folder_selected">Pasta do tema de som personalizado selecionada</string>
+    <string name="toast_custom_sound_theme_folder_error">Erro ao selecionar a pasta personalizada</string>
+    <string name="msg_sync_folder_desc">Selecione uma pasta para sincronizar e importar tabelas personalizadas automaticamente.</string>
+    <string name="msg_import_rules_confirm">Importar todas as regras desta tabela para o editor?</string>
 </resources>
