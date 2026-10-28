@@ -61,7 +61,7 @@
     <string name="deleted">%s Apagado</string>
     <string name="emoji_count_summary">%1$s, %2$d de %3$d</string>
     <string name="emoji_inserted">Inserido</string>
-    <string name="emoji_no_results">Nenhum resultado encontrado</string>
+    <string name="emoji_no_results">Nenhum emoji encontrado</string>
     <string name="emoji_no_results_query">Nenhum resultado para %s</string>
     <string name="emoji_no_to_insert">Nenhum emoji para inserir</string>
     <string name="emoji_search_mode_off">Modo de pesquisa de emojis desativado</string>

@@ -347,19 +347,20 @@ public class ActionHandler {
                     break;
                 case SIX_LEFT:
                     if (!emojiResults.isEmpty()) { emojiIndex = (emojiIndex - 1 + emojiResults.size()) % emojiResults.size(); message = getEmojiSummary(); }
-                    else message = "No emoji results";
+                    else message = context.getString(R.string.emoji_no_results);
                     break;
                 case SIX_RIGHT:
                     if (!emojiResults.isEmpty()) { emojiIndex = (emojiIndex + 1) % emojiResults.size(); message = getEmojiSummary(); }
-                    else message = "No emoji results";
+                    else message = context.getString(R.string.emoji_no_results);
                     break;
                 case SIX_UP:
                     if (!emojiResults.isEmpty()) {
                         EmojiEntry entry = emojiResults.get(emojiIndex);
                         listener.commitText(entry.emoji, 1);
                         String displayName = (entry.name != null && !entry.name.isEmpty()) ? entry.name : entry.keyword;
-                        message = context.getString(R.string.emoji_inserted) + displayName;
-                        emojiMode = false;
+                        message = context.getString(R.string.emoji_inserted) + " " + displayName;
+                        // Stay in emoji mode with the search and the selected emoji untouched, so the same emoji can be
+                        // inserted several times in a row; the toggle gesture closes the mode.
                     } else message = context.getString(R.string.emoji_no_to_insert);
                     break;
                 default: emojiHandled = false;
