@@ -148,13 +148,22 @@ public class ActionHandler {
     }
 
     private static ToneGenerator toneGenerator;
+    private static int toneStream = -1;
     private static final Object toneLock = new Object();
 
-    private static void playSpellingBeep() {
+    private static void playSpellingBeep(Context context) {
+        // Same option as the keyboard sounds: play the beep through the accessibility audio stream.
+        int stream = Options.getBooleanPreference(context, R.string.pref_use_accessibility_volume_sounds_key, false)
+                ? AudioManager.STREAM_ACCESSIBILITY : AudioManager.STREAM_MUSIC;
         synchronized (toneLock) {
+            if (toneGenerator != null && toneStream != stream) {
+                toneGenerator.release();
+                toneGenerator = null;
+            }
             if (toneGenerator == null) {
                 try {
-                    toneGenerator = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+                    toneGenerator = new ToneGenerator(stream, 100);
+                    toneStream = stream;
                 } catch (Exception e) {
                     Log.e("SBK_ActionHandler", "Failed to create ToneGenerator", e);
                 }
@@ -708,7 +717,7 @@ public class ActionHandler {
                         boolean vibrate = (feedbackVal == KeyboardFeedback.VIBRATE.value 
                                         || feedbackVal == KeyboardFeedback.ALL.value);
                         if (playSound) {
-                            playSpellingBeep();
+                            playSpellingBeep(context);
                         }
                         if (vibrate) {
                             triggerVibration(context, 125);

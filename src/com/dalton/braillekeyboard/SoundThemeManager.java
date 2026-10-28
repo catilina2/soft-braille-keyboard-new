@@ -39,6 +39,7 @@ public class SoundThemeManager {
     private static final long DEBOUNCE_DELAY_MS = 60;
 
     private float volumeFactor = 1.0f;
+    private boolean accessibilityStream = false;
     private final SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener;
 
     private SoundThemeManager(Context context) {
@@ -47,9 +48,13 @@ public class SoundThemeManager {
         
         SharedPreferences prefs = Options.getSharedPreferences(this.context);
         updateVolumeFactor(prefs);
+        updateAccessibilityStream(prefs);
         this.preferenceChangeListener = (sharedPreferences, key) -> {
             if (key != null && key.equals(SoundThemeManager.this.context.getString(R.string.pref_keyboard_sound_volume_key))) {
                 updateVolumeFactor(sharedPreferences);
+            } else if (key != null && key.equals(SoundThemeManager.this.context.getString(R.string.pref_use_accessibility_volume_sounds_key))) {
+                updateAccessibilityStream(sharedPreferences);
+                reloadTheme();
             }
         };
         prefs.registerOnSharedPreferenceChangeListener(this.preferenceChangeListener);
@@ -69,8 +74,11 @@ public class SoundThemeManager {
         if (soundPool != null) {
             soundPool.release();
         }
+        // With the accessibility option the sounds go through the accessibility audio stream, like the speech does
+        // (see Speech), so they follow the accessibility volume instead of the system/touch sounds volume.
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                .setUsage(accessibilityStream ? AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
+                        : AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
                 .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                 .build();
         soundPool = new SoundPool.Builder()
@@ -78,6 +86,17 @@ public class SoundThemeManager {
                 .setAudioAttributes(audioAttributes)
                 .build();
         soundIdMap.clear();
+    }
+
+    private void updateAccessibilityStream(SharedPreferences prefs) {
+        accessibilityStream = prefs.getBoolean(context.getString(R.string.pref_use_accessibility_volume_sounds_key), false);
+    }
+
+    /** The audio attributes are fixed when the SoundPool is built: rebuild it and load the selected theme again. */
+    private synchronized void reloadTheme() {
+        currentTheme = null;
+        customThemeUri = null;
+        loadSelectedTheme();
     }
 
     private void updateVolumeFactor(SharedPreferences prefs) {

@@ -669,6 +669,10 @@
     <string name="pref_use_accessibility_volume_key">USE_ACCESSIBILITY_VOLUME</string>
     <string name="pref_use_accessibility_volume_summary">Use accessibility volume for both TTS and WAV feedback.</string>
     <string name="pref_use_accessibility_volume_title">Use accessibility volume</string>
+    <string name="pref_use_accessibility_volume_sounds_default">false</string>
+    <string name="pref_use_accessibility_volume_sounds_key">USE_ACCESSIBILITY_VOLUME_SOUNDS</string>
+    <string name="pref_use_accessibility_volume_sounds_summary">Play the keyboard sound theme and the misspelling beep through the accessibility audio stream, like speech, so they follow the accessibility volume. Does not apply to the System Default theme.</string>
+    <string name="pref_use_accessibility_volume_sounds_title">Keyboard sounds use accessibility volume</string>
     <string name="pref_use_eight_dots_default">false</string>
     <string name="pref_use_eight_dots_key">USE_EIGHT_DOT</string>
     <string name="pref_use_eight_dots_summary">When enabled shows dots 7 and 8.</string>

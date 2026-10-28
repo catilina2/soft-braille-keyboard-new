@@ -614,6 +614,10 @@
     <string name="pref_use_accessibility_volume_key">USE_ACCESSIBILITY_VOLUME</string>
     <string name="pref_use_accessibility_volume_summary">Usa o volume de acessibilidade para feedback TTS e WAV.</string>
     <string name="pref_use_accessibility_volume_title">Usar volume de acessibilidade</string>
+    <string name="pref_use_accessibility_volume_sounds_default">false</string>
+    <string name="pref_use_accessibility_volume_sounds_key">USE_ACCESSIBILITY_VOLUME_SOUNDS</string>
+    <string name="pref_use_accessibility_volume_sounds_summary">Toca o tema de som do teclado e o bipe de erro ortográfico pelo fluxo de áudio de acessibilidade, como a voz, e assim seguem o volume de acessibilidade. Não vale para o tema Padrão do sistema.</string>
+    <string name="pref_use_accessibility_volume_sounds_title">Sons do teclado usam o volume de acessibilidade</string>
     <string name="pref_use_eight_dots_default">false</string>
     <string name="pref_use_eight_dots_key">USE_EIGHT_DOT</string>
     <string name="pref_use_eight_dots_summary">Quando ativado, mostra os pontos 7 e 8.</string>
